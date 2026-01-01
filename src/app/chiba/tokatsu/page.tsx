@@ -80,10 +80,22 @@ export default function TokatsuPage() {
         {/* 3. The "3 Reliefs" (Why Us) */}
         <section className="py-16 bg-white">
           <div className="app-container">
-             <div className="text-center mb-16">
+             <div className="text-center mb-10">
                <span className="text-official-blue font-bold tracking-widest uppercase text-sm">Features</span>
                <h2 className="text-2xl md:text-3xl font-bold mt-2">当窓口の「3つの安心」</h2>
                <div className="w-16 h-1 bg-official-blue mx-auto mt-4 rounded-full"></div>
+             </div>
+
+             {/* Icons Image */}
+             <div className="flex justify-center mb-12">
+                <div className="relative w-full max-w-2xl h-32 md:h-40">
+                  <Image 
+                    src="/trust_icons.png" 
+                    alt="信頼の証" 
+                    fill 
+                    className="object-contain"
+                  />
+                </div>
              </div>
 
              <div className="grid md:grid-cols-3 gap-8 md:gap-12">
@@ -158,15 +170,29 @@ export default function TokatsuPage() {
                  </li>
                </ul>
              </div>
-             <div className="bg-white p-2 rounded-lg shadow-lg">
-                <div className="relative h-64 w-full rounded overflow-hidden">
-                  <Image
-                    src="/tokatsu_map.png"
-                    alt="東葛エリアマップ（松戸・柏・流山・我孫子・野田）"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+             <div className="space-y-4">
+               {/* Local Staff Image */}
+               <div className="bg-white p-2 rounded-lg shadow-lg rotate-1 transform">
+                  <div className="relative h-64 w-full rounded overflow-hidden">
+                    <Image
+                      src="/local_staff.png"
+                      alt="地域密着の担当スタッフ"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+               </div>
+               {/* Map Image */}
+               <div className="bg-white p-2 rounded-lg shadow-lg -rotate-1 transform">
+                  <div className="relative h-48 w-full rounded overflow-hidden">
+                    <Image
+                      src="/tokatsu_map.png"
+                      alt="東葛エリアマップ"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+               </div>
              </div>
            </div>
         </section>
@@ -176,7 +202,7 @@ export default function TokatsuPage() {
           <div className="app-container max-w-4xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl font-bold mb-12">解決までの流れ</h2>
             
-            <div className="space-y-8">
+            <div className="space-y-8 mb-12">
               {/* Step 1 */}
               <div className="flex md:items-start flex-col md:flex-row gap-6">
                  <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl shadow-md">
@@ -219,6 +245,21 @@ export default function TokatsuPage() {
                  </div>
               </div>
             </div>
+
+            {/* Clean Room Image */}
+            <div className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/clean_room.png"
+                  alt="片付け後のきれいな部屋"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <p className="text-white font-bold text-2xl md:text-3xl tracking-widest text-shadow">
+                    「肩の荷が下りました」
+                  </p>
+                </div>
+            </div>
           </div>
         </section>
 
@@ -236,6 +277,7 @@ export default function TokatsuPage() {
               </div>
               <div className="md:w-1/2 p-8 md:p-12">
                 <h2 className="text-2xl font-bold mb-4">お気軽にご相談ください</h2>
+
                 <p className="text-gray-600 mb-6 text-sm">
                   「こんなこと聞いてもいいのかな？」という些細なことでも大歓迎です。
                   強引な勧誘は一切ございません。
