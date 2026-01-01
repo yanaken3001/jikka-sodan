@@ -51,10 +51,11 @@ export default function TokatsuPage() {
                 </a>
               </div>
             </div>
+            {/* Hero Image Update: Professional Consultation Vibe */}
             <div className="order-1 md:order-2 relative h-[300px] md:h-[450px] w-full rounded-none overflow-hidden shadow-xl border-4 border-white">
               <Image 
-                src="/hero.png" 
-                alt="優しく手を差し伸べる相談員"
+                src="/local_staff.png" 
+                alt="不動産のプロフェッショナルによる相談"
                 fill
                 className="object-cover"
                 priority
@@ -72,9 +73,9 @@ export default function TokatsuPage() {
         <section className="py-16 bg-white">
           <div className="app-container">
              <div className="text-center mb-10">
-               <span className="text-official-blue font-bold tracking-widest uppercase text-sm">Features</span>
+               <span className="text-official-navy font-bold tracking-widest uppercase text-sm">Features</span>
                <h2 className="text-2xl md:text-3xl font-bold mt-2">当窓口の「3つの安心」</h2>
-               <div className="w-16 h-1 bg-official-blue mx-auto mt-4 rounded-full"></div>
+               <div className="w-16 h-1 bg-official-navy mx-auto mt-4 rounded-full"></div>
              </div>
 
              {/* Icons Image */}
@@ -90,43 +91,62 @@ export default function TokatsuPage() {
              </div>
 
              <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-               {/* Relief 1 */}
-               <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
-                 <div className="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
-                 <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-md mb-6 relative z-10 text-official-blue">
-                   <Home size={32} />
+               {/* Relief 1: Disposal Image Insertion */}
+               <div className="bg-gray-50 rounded-xl p-0 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
+                 <div className="relative h-48 w-full bg-gray-200">
+                    <Image 
+                      src="/clean_room.png" 
+                      alt="片付け・処分の様子" 
+                      fill 
+                      className="object-cover"
+                    />
                  </div>
-                 <h3 className="text-xl font-bold mb-4">① 残置物そのままOK</h3>
-                 <p className="text-gray-600 leading-relaxed text-base">
-                   「ゴミ屋敷状態で恥ずかしい」なんて思わないでください。分別も運び出しも一切不要。
-                   ありのままの状態でお見せいただければ、あとはプロが適正に処理します。
-                 </p>
+                 <div className="p-8">
+                   <h3 className="text-xl font-bold mb-4 flex items-center">
+                     <Home className="mr-2 text-official-navy" /> 残置物そのままOK
+                   </h3>
+                   <p className="text-gray-600 leading-relaxed text-base">
+                     「ゴミ屋敷状態で恥ずかしい」なんて思わないでください。分別も運び出しも一切不要。
+                     ありのままの状態でお見せいただければ、あとはプロが適正に処理します。
+                   </p>
+                 </div>
                </div>
 
                 {/* Relief 2 */}
-                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
-                 <div className="absolute top-0 right-0 bg-green-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
-                 <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-md mb-6 relative z-10 text-official-green">
-                   <div className="font-bold text-2xl">¥0</div>
+                <div className="bg-gray-50 rounded-xl p-0 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
+                 <div className="relative h-48 w-full bg-gray-200">
+                    <Image 
+                      src="/relief_concept.png" 
+                      alt="費用負担の軽減" 
+                      fill 
+                      className="object-cover"
+                    />
                  </div>
-                 <h3 className="text-xl font-bold mb-4">② 持ち出し現金0円</h3>
-                 <p className="text-gray-600 leading-relaxed text-base">
-                   実家の解体費用や片付け費用は、売却した代金から後払いで精算可能な「立替プラン」をご用意。
-                   手元の年金や貯金を切り崩す必要はありません。（※要審査）
-                 </p>
+                 <div className="p-8">
+                   <h3 className="text-xl font-bold mb-4 flex items-center">
+                     <span className="text-official-navy mr-2 font-bold">¥0</span> 持ち出し現金0円
+                   </h3>
+                   <p className="text-gray-600 leading-relaxed text-base">
+                     実家の解体費用や片付け費用は、売却した代金から後払いで精算可能な「立替プラン」をご用意。
+                     手元の年金や貯金を切り崩す必要はありません。（※要審査）
+                   </p>
+                 </div>
                </div>
 
                 {/* Relief 3 */}
-                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
-                 <div className="absolute top-0 right-0 bg-orange-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
-                 <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-md mb-6 relative z-10 text-orange-500">
-                   <CheckCircle size={32} />
+                <div className="bg-gray-50 rounded-xl p-0 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
+                 <div className="relative h-48 w-full bg-gray-200 flex items-center justify-center">
+                    <div className="bg-white p-4 rounded-full shadow-lg">
+                       <CheckCircle size={48} className="text-official-navy" />
+                    </div>
                  </div>
-                 <h3 className="text-xl font-bold mb-4">③ たらい回しなし</h3>
-                 <p className="text-gray-600 leading-relaxed text-base">
-                   行政への手続き、司法書士、不動産業者、解体業者...。
-                   これらをすべて当窓口の「専任担当者」が一本化して調整します。何度も同じ説明をする必要はありません。
-                 </p>
+                 <div className="p-8">
+                   <h3 className="text-xl font-bold mb-4">専任担当制</h3>
+                   <p className="text-gray-600 leading-relaxed text-base">
+                     行政への手続き、司法書士、不動産業者、解体業者...。
+                     これらをすべて当窓口の「専任担当者」が一本化して調整します。何度も同じ説明をする必要はありません。
+                   </p>
+                 </div>
                </div>
              </div>
           </div>
