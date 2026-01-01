@@ -1,22 +1,17 @@
-
 import Link from 'next/link';
 import { ArrowLeft, ChevronRight, MapPin } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: '千葉県の対応エリア一覧 | 実家じまい総合相談窓口',
-  description: '千葉県内の実家じまい・空き家相談対応エリア一覧。現在は東葛エリア（松戸市・柏市・流山市）を中心に受付中です。',
+  description: '千葉県内の実家じまい・空き家相談対応エリア一覧。現在は東葛エリア（松戸市・柏市・流山市など）を中心に受付中です。',
 };
 
 export default function ChibaPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <header className="bg-white border-b border-gray-200 py-4">
-        <div className="app-container flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-official-blue">
-            実家じまい総合相談窓口
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-grow py-12">
         <div className="app-container max-w-4xl mx-auto">
@@ -54,11 +49,11 @@ export default function ChibaPage() {
                       東葛エリア
                     </h2>
                     <p className="text-sm text-gray-600">
-                      松戸市 / 柏市 / 流山市 / 我孫子市 / 野田市
+                      松戸市 / 柏市 / 流山市 / 野田市 / 我孫子市 / 鎌ケ谷市
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
+                       <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold">エリア強化中</span>
                       <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">即日対応可</span>
-                      <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">出張費無料</span>
                     </div>
                   </div>
                 </div>
@@ -74,16 +69,16 @@ export default function ChibaPage() {
                 <div className="absolute top-0 right-0 bg-gray-200 text-gray-500 text-xs font-bold px-3 py-1 rounded-bl-lg">
                   準備中
                 </div>
-                <h3 className="font-bold text-gray-500 mb-1">葛南・ベイエリア</h3>
-                <p className="text-xs text-gray-400">船橋市 / 市川市 / 浦安市 / 習志野市 他</p>
+                <h3 className="font-bold text-gray-500 mb-1">千葉エリア</h3>
+                <p className="text-xs text-gray-400">千葉市全域（中央区・花見川区 他）</p>
               </div>
               
               <div className="bg-white border border-gray-200 rounded-lg p-6 relative cursor-not-allowed">
                 <div className="absolute top-0 right-0 bg-gray-200 text-gray-500 text-xs font-bold px-3 py-1 rounded-bl-lg">
                   準備中
                 </div>
-                <h3 className="font-bold text-gray-500 mb-1">千葉エリア</h3>
-                <p className="text-xs text-gray-400">千葉市全域</p>
+                <h3 className="font-bold text-gray-500 mb-1">船橋・市川エリア</h3>
+                <p className="text-xs text-gray-400">船橋市 / 市川市 / 浦安市 / 習志野市</p>
               </div>
 
                <div className="bg-white border border-gray-200 rounded-lg p-6 relative cursor-not-allowed">
@@ -98,9 +93,7 @@ export default function ChibaPage() {
         </div>
       </main>
 
-      <footer className="bg-gray-800 text-gray-400 py-8 text-center text-sm">
-        <p>&copy; {new Date().getFullYear()} 実家じまい総合相談窓口</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

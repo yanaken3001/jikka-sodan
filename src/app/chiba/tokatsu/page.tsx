@@ -1,54 +1,37 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, CheckCircle, Home, Truck, FileText, ArrowRight, MapPin } from 'lucide-react';
+import { Phone, CheckCircle, Home, FileText, MapPin, ChevronRight, ArrowRight } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: '千葉・東葛 実家じまい総合相談窓口 | 松戸・柏・流山の空き家相談',
+  title: '千葉・東葛 実家じまい総合相談窓口 | 松戸・柏・流山・野田・我孫子的空き家相談',
   description: '千葉県東葛エリア（松戸・柏・流山）専門。実家の片付けから売却まで、窓口ひとつで解決。残置物そのままでOK、持ち出し資金0円で対応可能です。',
 };
 
 export default function TokatsuPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      {/* 1. Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="app-container flex justify-between items-center h-16 md:h-20">
-          <Link href="/" className="text-lg md:text-xl font-bold text-official-blue leading-tight">
-            千葉・東葛<br className="md:hidden" />
-            <span className="text-black">実家じまい総合相談窓口</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <div className="hidden md:block text-right">
-              <p className="text-xs text-gray-500 font-bold">東葛エリア専用ダイヤル</p>
-              <p className="text-xl font-bold text-official-blue tracking-wider">0123-456-789</p>
-              <p className="text-xs text-gray-400">受付 9:00-18:00 (土日祝可)</p>
-            </div>
-            <a 
-              href="tel:0123-456-789" 
-              className="bg-official-green hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md shadow flex items-center md:hidden"
-            >
-              <Phone size={18} className="mr-1" />
-              相談無料
-            </a>
-            <a 
-              href="#contact" 
-              className="hidden md:flex bg-official-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md shadow items-center transition-colors"
-            >
-              無料相談予約
-              <ArrowRight size={18} className="ml-2" />
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-grow">
+        {/* Breadcrumbs */}
+        <div className="bg-gray-50 border-b border-gray-200 py-2">
+            <div className="app-container text-xs text-gray-500 flex items-center">
+                <Link href="/" className="hover:underline">ホーム</Link>
+                <ChevronRight size={12} className="mx-1" />
+                <Link href="/chiba" className="hover:underline">千葉県</Link>
+                <ChevronRight size={12} className="mx-1" />
+                <span className="text-gray-800 font-bold">東葛エリア</span>
+            </div>
+        </div>
+
         {/* 2. Hero Section */}
         <section className="relative bg-blue-50">
           <div className="app-container py-12 md:py-20 grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
-              <div className="inline-block bg-white text-official-blue font-bold px-3 py-1 rounded-full border border-blue-200 mb-4 text-sm md:text-base">
-                千葉・東葛エリア（松戸・柏・流山）専門
+              <div className="inline-block bg-white text-official-blue font-bold px-3 py-1 rounded-full border border-blue-200 mb-4 text-sm md:text-base shadow-sm">
+                千葉・東葛エリア（松戸・柏・流山・野田・我孫子）専門
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">
                 片付け・整理は一切不要。<br />
@@ -57,17 +40,23 @@ export default function TokatsuPage() {
               </h1>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                 「実家が散らかっていて恥ずかしい...」<br />
-                そんな心配はいりません。実家の片付けから売却まで、<br className="hidden md:inline" />
+                そんな心配はいりません。実家の片付けから売却・解体まで、<br className="hidden md:inline" />
                 私たち公的認定窓口がすべて手配します。
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
+                  href="tel:0123-456-789"
+                  className="bg-white border-2 border-official-green text-official-green font-bold py-4 px-6 rounded-lg shadow-sm hover:bg-green-50 transition-colors flex items-center justify-center"
+                >
+                    <Phone className="mr-2" size={24} />
+                    <span className="text-lg">0123-456-789</span>
+                </a>
+                <a 
                   href="#contact" 
                   className="bg-official-green text-white font-bold py-4 px-8 rounded-lg shadow-lg text-center hover:bg-green-700 transition-colors flex items-center justify-center text-lg"
                 >
-                  まずは「手続き」の流れを確認する
-                  <span className="text-sm font-normal ml-2 bg-white/20 px-2 py-0.5 rounded">無料</span>
+                  無料・現地調査を依頼する
                 </a>
               </div>
             </div>
@@ -79,7 +68,7 @@ export default function TokatsuPage() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 md:p-8">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8">
                 <p className="text-white font-bold text-lg md:text-xl">
                   「散らかったままで大丈夫ですよ」
                 </p>
@@ -105,9 +94,9 @@ export default function TokatsuPage() {
                    <Home size={32} />
                  </div>
                  <h3 className="text-xl font-bold mb-4">① 残置物そのままOK</h3>
-                 <p className="text-gray-600 leading-relaxed">
+                 <p className="text-gray-600 leading-relaxed text-base">
                    「ゴミ屋敷状態で恥ずかしい」なんて思わないでください。分別も運び出しも一切不要。
-                   すべてプロが適正に処理しますので、鍵をお預かりするだけで完了します。
+                   ありのままの状態でお見せいただければ、あとはプロが適正に処理します。
                  </p>
                </div>
 
@@ -118,9 +107,9 @@ export default function TokatsuPage() {
                    <div className="font-bold text-2xl">¥0</div>
                  </div>
                  <h3 className="text-xl font-bold mb-4">② 持ち出し現金0円</h3>
-                 <p className="text-gray-600 leading-relaxed">
+                 <p className="text-gray-600 leading-relaxed text-base">
                    実家の解体費用や片付け費用は、売却した代金から後払いで精算可能な「立替プラン」をご用意。
-                   手元の年金や貯金を切り崩す必要はありません。
+                   手元の年金や貯金を切り崩す必要はありません。（※要審査）
                  </p>
                </div>
 
@@ -131,8 +120,8 @@ export default function TokatsuPage() {
                    <CheckCircle size={32} />
                  </div>
                  <h3 className="text-xl font-bold mb-4">③ たらい回しなし</h3>
-                 <p className="text-gray-600 leading-relaxed">
-                   行政への手続き、司法書士、不動産業者...。
+                 <p className="text-gray-600 leading-relaxed text-base">
+                   行政への手続き、司法書士、不動産業者、解体業者...。
                    これらをすべて当窓口の「専任担当者」が一本化して調整します。何度も同じ説明をする必要はありません。
                  </p>
                </div>
@@ -142,26 +131,30 @@ export default function TokatsuPage() {
 
         {/* 4. Local Trust */}
         <section className="py-16 bg-gray-600 text-white relative overflow-hidden">
-           <div className="absolute inset-0 opacity-10 bg-[url('/pattern.png')]"></div> {/* Pattern placeholder if needed */}
+           {/* <div className="absolute inset-0 opacity-10 bg-[url('/pattern.png')]"></div> Pattern placeholder */}
            <div className="app-container relative z-10 grid md:grid-cols-2 gap-12 items-center">
              <div>
                <h2 className="text-2xl md:text-3xl font-bold mb-6">
                  東葛エリア専門だからこそ、<br />
                  <span className="text-yellow-400">「地の利」</span>を熟知しています。
                </h2>
-               <p className="leading-relaxed opacity-90 mb-6">
+               <p className="leading-relaxed opacity-90 mb-6 text-lg">
                  私たちは松戸・柏・流山に拠点を置く地域密着の相談所です。
                  たとえば、国道6号線や16号線の慢性的な渋滞事情も考慮した上で、
                  もっとも効率的で近隣に迷惑をかけない作業スケジュールを組みます。
                </p>
                <ul className="space-y-4">
                  <li className="flex items-center">
-                   <MapPin className="text-yellow-400 mr-3" />
+                   <MapPin className="text-yellow-400 mr-3 flex-shrink-0" />
                    <span>狭い路地での2tトラック進入可否も即時判断</span>
                  </li>
                  <li className="flex items-center">
-                   <MapPin className="text-yellow-400 mr-3" />
-                   <span>地元の行政ルール（ゴミ分別）に完全準拠</span>
+                   <MapPin className="text-yellow-400 mr-3 flex-shrink-0" />
+                   <span>松戸・柏エリア独自のゴミ分別ルールに完全準拠</span>
+                 </li>
+                 <li className="flex items-center">
+                   <MapPin className="text-yellow-400 mr-3 flex-shrink-0" />
+                   <span>地元の優良解体業者との直接提携でコストダウン</span>
                  </li>
                </ul>
              </div>
@@ -186,7 +179,7 @@ export default function TokatsuPage() {
             <div className="space-y-8">
               {/* Step 1 */}
               <div className="flex md:items-start flex-col md:flex-row gap-6">
-                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl">
+                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl shadow-md">
                    1
                  </div>
                  <div className="flex-grow pt-2">
@@ -200,7 +193,7 @@ export default function TokatsuPage() {
 
                {/* Step 2 */}
                <div className="flex md:items-start flex-col md:flex-row gap-6">
-                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl">
+                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl shadow-md">
                    2
                  </div>
                  <div className="flex-grow pt-2">
@@ -214,7 +207,7 @@ export default function TokatsuPage() {
 
                {/* Step 3 */}
                <div className="flex md:items-start flex-col md:flex-row gap-6">
-                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl">
+                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl shadow-md">
                    3
                  </div>
                  <div className="flex-grow pt-2">
@@ -256,9 +249,10 @@ export default function TokatsuPage() {
                   <p className="text-xs text-gray-400 mt-2">受付時間 9:00〜18:00（まずは相談員に繋がります）</p>
                 </div>
                 
-                 <button className="w-full bg-official-green hover:bg-green-700 text-white font-bold py-4 rounded-lg shadow transition-colors flex items-center justify-center">
+                 <button className="w-full bg-official-green hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg shadow-md transition-colors flex items-center justify-center text-lg">
                    <FileText className="mr-2" />
                    WEB相談予約フォーム (24時間)
+                   <ArrowRight className="ml-2" size={20} />
                  </button>
               </div>
             </div>
@@ -266,22 +260,7 @@ export default function TokatsuPage() {
         </section>
       </main>
 
-      <footer className="bg-gray-800 text-gray-400 py-12 text-sm">
-        <div className="app-container grid md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h4 className="text-white font-bold mb-4">実家じまい総合相談窓口</h4>
-            <p>運営：株式会社[パートナー名]</p>
-            <p>千葉県東葛エリア事務局：千葉県柏市XX-XX</p>
-          </div>
-          <div className="text-xs">
-            <p className="mb-2">※当窓口は行政機関と連携し、空き家対策特別措置法に基づいた適切な管理・処分を推進する民間相談機関です。</p>
-            <p>※古物商許可番号: 第1234567890号</p>
-          </div>
-        </div>
-        <div className="text-center border-t border-gray-700 pt-8">
-           <p>&copy; {new Date().getFullYear()} 実家じまい総合相談窓口 All Rights Reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
