@@ -165,10 +165,14 @@ export default function TokatsuPage() {
                  </li>
                </ul>
              </div>
-             <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
-                <div className="bg-gray-500 h-64 rounded flex items-center justify-center text-gray-300">
-                  {/* Map placeholder or localized image */}
-                  <span className="text-sm">東葛エリアマップ（イメージ）</span>
+             <div className="bg-white p-2 rounded-lg shadow-lg">
+                <div className="relative h-64 w-full rounded overflow-hidden">
+                  <Image
+                    src="/tokatsu_map.png"
+                    alt="東葛エリアマップ（松戸・柏・流山・我孫子・野田）"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
              </div>
            </div>
