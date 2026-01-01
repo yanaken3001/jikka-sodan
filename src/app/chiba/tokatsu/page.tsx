@@ -15,52 +15,43 @@ export default function TokatsuPage() {
       <Header areaName="千葉・東葛" />
 
       <main className="flex-grow">
-        {/* Breadcrumbs */}
-        <div className="bg-gray-50 border-b border-gray-200 py-2">
-            <div className="app-container text-xs text-gray-500 flex items-center">
-                <Link href="/" className="hover:underline">ホーム</Link>
-                <ChevronRight size={12} className="mx-1" />
-                <Link href="/chiba" className="hover:underline">千葉県</Link>
-                <ChevronRight size={12} className="mx-1" />
-                <span className="text-gray-800 font-bold">東葛エリア</span>
-            </div>
-        </div>
+        {/* Breadcrumbs REMOVED for optimization */}
 
         {/* 2. Hero Section */}
         <section className="relative bg-blue-50">
-          <div className="app-container py-12 md:py-20 grid md:grid-cols-2 gap-8 items-center">
+          <div className="app-container py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <div className="inline-block bg-white text-official-blue font-bold px-3 py-1 rounded-full border border-blue-200 mb-4 text-sm md:text-base shadow-sm">
+              <div className="inline-block bg-white text-official-navy font-bold px-3 py-1 rounded-full border border-blue-200 mb-6 text-sm md:text-base shadow-sm">
                 千葉・東葛エリア（松戸・柏・流山・野田・我孫子）専門
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl font-bold text-official-black leading-tight mb-8">
                 片付け・整理は一切不要。<br />
-                そのままの状態<span className="text-official-blue">「まるごと」</span>で<br />
+                そのままの状態<span className="text-official-navy">「まるごと」</span>で<br />
                 お話しください。
               </h1>
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+              <p className="text-gray-600 text-lg mb-10 leading-relaxed">
                 「実家が散らかっていて恥ずかしい...」<br />
                 そんな心配はいりません。実家の片付けから売却・解体まで、<br className="hidden md:inline" />
-                私たち公的認定窓口がすべて手配します。
+                私たち認定専門家が連携してすべて手配します。
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="tel:0123-456-789"
-                  className="bg-white border-2 border-official-green text-official-green font-bold py-4 px-6 rounded-lg shadow-sm hover:bg-green-50 transition-colors flex items-center justify-center"
+                  className="bg-white border-2 border-official-navy text-official-navy font-bold py-4 px-6 rounded-none shadow-sm hover:bg-blue-50 transition-colors flex items-center justify-center"
                 >
                     <Phone className="mr-2" size={24} />
                     <span className="text-lg">0123-456-789</span>
                 </a>
                 <a 
                   href="#contact" 
-                  className="bg-official-green text-white font-bold py-4 px-8 rounded-lg shadow-lg text-center hover:bg-green-700 transition-colors flex items-center justify-center text-lg"
+                  className="bg-official-red text-white font-bold py-4 px-8 rounded-none shadow-lg text-center hover:opacity-90 transition-opacity flex items-center justify-center text-lg"
                 >
                   無料・現地調査を依頼する
                 </a>
               </div>
             </div>
-            <div className="order-1 md:order-2 relative h-[300px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="order-1 md:order-2 relative h-[300px] md:h-[450px] w-full rounded-none overflow-hidden shadow-xl border-4 border-white">
               <Image 
                 src="/hero.png" 
                 alt="優しく手を差し伸べる相談員"
@@ -291,7 +282,7 @@ export default function TokatsuPage() {
                   <p className="text-xs text-gray-400 mt-2">受付時間 9:00〜18:00（まずは相談員に繋がります）</p>
                 </div>
                 
-                 <button className="w-full bg-official-green hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg shadow-md transition-colors flex items-center justify-center text-lg">
+                 <button className="w-full bg-official-red hover:opacity-90 text-white font-bold py-4 px-6 rounded-lg shadow-md transition-opacity flex items-center justify-center text-lg">
                    <FileText className="mr-2" />
                    WEB相談予約フォーム (24時間)
                    <ArrowRight className="ml-2" size={20} />

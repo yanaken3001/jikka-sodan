@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { MapPin, ArrowRight, FileText, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -9,79 +10,93 @@ export default function Home() {
       <Header />
 
       <main className="flex-grow bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-white py-16 md:py-24">
-          <div className="app-container text-center max-w-3xl mx-auto">
-            <span className="inline-block bg-official-blue/10 text-official-blue px-4 py-1 rounded-full text-sm font-bold mb-6">
-              実家じまい・空き家相談
-            </span>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
-              実家の片付け・処分・売却。<br className="hidden md:block" />
-              面倒な手続きを、窓口ひとつで解決します。
-            </h1>
-            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-              「実家じまい総合相談窓口」は、遺品整理から不動産売却まで、
-              <br className="hidden md:inline" />
-              独自の審査基準をクリアした地域の専門家と連携し、安全に完結させるための専門機関です。
-            </p>
-            
-            <div className="bg-blue-50 p-8 rounded-xl border border-blue-100 inline-block w-full max-w-md shadow-sm">
-              <p className="font-bold text-official-blue mb-4">
-                まずはお住まいの地域を選択してください
+        {/* Hero Section: The Portal */}
+        <section className="bg-white pt-24 pb-16 md:pt-32 md:pb-24">
+          <div className="app-container grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Copy */}
+            <div className="order-2 md:order-1">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8 text-official-black tracking-wide">
+                実家の整理、<br />
+                手続き、売却。<br />
+                <span className="text-official-navy">窓口はひとつです。</span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-normal">
+                「どこから手をつければいいかわからない」<br />
+                そんな悩みを持つ方のための、<br />
+                地域専門家と連携した実家じまい専門窓口です。
               </p>
-              <Link
-                href="/chiba"
-                className="w-full bg-official-blue hover:bg-blue-700 text-white font-bold py-5 px-6 rounded-lg shadow-md flex items-center justify-center transition-colors text-lg"
-              >
-                <MapPin className="mr-2" size={24} />
-                千葉県 (Chiba) を選択
-                <ArrowRight className="ml-auto" size={24} />
-              </Link>
-              <p className="text-xs text-gray-500 mt-3 text-left">
-                ※現在は千葉県北西部（東葛エリア）の対応を強化しています。
-              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  href="/chiba" 
+                  className="bg-official-red hover:opacity-90 text-white font-bold py-4 px-8 rounded-none shadow-sm flex items-center justify-center text-lg transition-all"
+                >
+                  エリアを選択して相談
+                  <ArrowRight className="ml-2" />
+                </Link>
+              </div>
+            </div>
+            {/* Right: Abstract Visual */}
+            <div className="order-1 md:order-2 relative h-[300px] md:h-[500px] w-full bg-gray-100">
+               <Image 
+                 src="/hero_new.png" 
+                 alt="新しい生活の始まり" 
+                 fill 
+                 className="object-cover grayscale-[20%]"
+                 priority
+               />
             </div>
           </div>
         </section>
 
         {/* Features/Trust Section */}
-        <section className="py-16">
+        {/* Navigation Cards */}
+        <section className="bg-official-gray py-20">
           <div className="app-container">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-bold">
-                当窓口が選ばれる3つの理由
-              </h3>
+            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center tracking-widest">
+              目的から探す
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+               {/* Card 1: Chiba Hub */}
+               <Link href="/chiba" className="group bg-white p-8 md:p-12 border border-gray-200 hover:border-official-navy transition-colors block h-full">
+                 <div className="w-12 h-12 bg-official-navy text-white flex items-center justify-center mb-6">
+                   <MapPin size={24} />
+                 </div>
+                 <h3 className="text-xl font-bold mb-4 group-hover:text-official-navy">千葉県にお住まいの方</h3>
+                 <p className="text-gray-600 text-sm">柏市、松戸市、流山市など、東葛エリアを中心とした地域ごとの相談窓口をご案内します。</p>
+               </Link>
+
+               {/* Card 2: Process */}
+               <div className="bg-white p-8 md:p-12 border border-gray-200 h-full opacity-60 cursor-not-allowed">
+                 <div className="w-12 h-12 bg-gray-300 text-white flex items-center justify-center mb-6">
+                   <FileText size={24} />
+                 </div>
+                 <h3 className="text-xl font-bold mb-4">手続きの流れ</h3>
+                 <p className="text-gray-600 text-sm">相談から解決までの具体的なステップをご説明します。（準備中）</p>
+               </div>
+
+               {/* Card 3: FAQ */}
+               <div className="bg-white p-8 md:p-12 border border-gray-200 h-full opacity-60 cursor-not-allowed">
+                  <div className="w-12 h-12 bg-gray-300 text-white flex items-center justify-center mb-6">
+                   {/* Import HelpCircle if needed, or use generic icon */}
+                   <span className="text-xl font-bold">?</span>
+                 </div>
+                 <h3 className="text-xl font-bold mb-4">よくある質問</h3>
+                 <p className="text-gray-600 text-sm">費用や期間など、皆様から寄せられる質問にお答えします。（準備中）</p>
+               </div>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                  ⚖️
-                </div>
-                <h4 className="font-bold text-lg mb-2">中立的なアドバイス</h4>
-                <p className="text-gray-600 text-sm">
-                  「売る」ありきではなく、「貸す」「管理する」など、お客様の状況に合わせた最適なプランを提案します。
-                </p>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                  📋
-                </div>
-                <h4 className="font-bold text-lg mb-2">ワンストップ解決</h4>
-                <p className="text-gray-600 text-sm">
-                  遺品整理、不動産、解体、相続手続き...それぞれの専門家への連絡・調整はすべて担当者が代行します。
-                </p>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                  💰
-                </div>
-                <h4 className="font-bold text-lg mb-2">費用の持ち出し0円</h4>
-                <p className="text-gray-600 text-sm">
-                   片付けや解体などの先行費用は、不動産の売却代金から精算が可能。（※物件状況による）
-                </p>
-              </div>
-            </div>
+          </div>
+        </section>
+
+        {/* Trust Section (Simplified) */}
+        <section className="py-24 bg-white">
+          <div className="app-container max-w-4xl mx-auto text-center">
+               <h2 className="text-2xl font-bold mb-8">私たちは「地域の基準」で運営されています</h2>
+               <p className="text-lg text-gray-700 leading-loose mb-12">
+                 無理な勧誘や、不明瞭な追加請求は一切行いません。<br />
+                 地域の専門家や法務機関と連携し、<br />
+                 安全かつ透明性の高いサービスを提供することをお約束します。
+               </p>
+               <div className="h-px w-24 bg-gray-300 mx-auto"></div>
           </div>
         </section>
       </main>
