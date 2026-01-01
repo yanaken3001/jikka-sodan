@@ -16,12 +16,12 @@ export default function ChibaPage() {
       <main className="flex-grow py-12">
         <div className="app-container max-w-4xl mx-auto">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-gray-500 hover:text-official-blue transition-colors mb-4">
+            <Link href="/" className="inline-flex items-center text-gray-500 hover:text-official-navy transition-colors mb-4">
               <ArrowLeft size={16} className="mr-1" />
               トップページに戻る
             </Link>
             <h1 className="text-2xl md:text-3xl font-bold mb-4">
-              <span className="text-official-blue">千葉県</span> の対応エリア一覧
+              <span className="text-official-navy">千葉県</span> の対応エリア一覧
             </h1>
             <p className="text-gray-600">
               現在、以下のエリアにてサービスを提供しております。
@@ -34,15 +34,15 @@ export default function ChibaPage() {
             {/* Active Area: Tokatsu */}
             <Link 
               href="/chiba/tokatsu" 
-              className="block bg-white border-2 border-official-blue rounded-xl p-6 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 relative overflow-hidden group"
+              className="block bg-white border-2 border-official-navy rounded-xl p-6 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 bg-official-blue text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+              <div className="absolute top-0 right-0 bg-official-navy text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                 受付中
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
                   <div className="bg-blue-100/50 p-3 rounded-full mr-4 group-hover:bg-blue-100 transition-colors">
-                    <MapPin className="text-official-blue" size={24} />
+                    <MapPin className="text-official-navy" size={24} />
                   </div>
                   <div>
                     <h2 className="text-xl font-bold text-gray-800 mb-1">
@@ -57,7 +57,7 @@ export default function ChibaPage() {
                     </div>
                   </div>
                 </div>
-                <div className="text-official-blue">
+                <div className="text-official-navy">
                    <ChevronRight size={24} />
                 </div>
               </div>
