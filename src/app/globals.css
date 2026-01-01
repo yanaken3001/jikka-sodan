@@ -1,16 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-official-blue: #0056b3;
-  --color-official-green: #28a745;
-  --color-text-main: #333333;
+  --color-official-navy: #003366; /* Kachi-iro */
+  --color-official-red: #CC0000; /* Signal Red */
+  --color-official-black: #333333; /* Sumi Black */
+  --color-official-gray: #F3F4F6;
   --font-sans: var(--font-noto-sans-jp);
 }
 
 :root {
-  --background: #ffffff;
+  --background: #FFFFFF;
   --foreground: #333333;
 }
 
@@ -18,12 +17,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-noto-sans-jp), sans-serif;
-  font-size: 16px; /* Ensure readability */
+  font-weight: 400; /* Regular */
+  line-height: 2.0; /* Loose for readability */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bold */
+  line-height: 1.5;
+  letter-spacing: 0.05em;
 }
 
 /* Utility for official look */
 .app-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem; /* Wider padding */
 }
