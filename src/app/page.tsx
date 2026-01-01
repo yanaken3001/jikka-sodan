@@ -13,7 +13,7 @@ export default function Home() {
         <section className="bg-white py-16 md:py-24">
           <div className="app-container text-center max-w-3xl mx-auto">
             <span className="inline-block bg-official-blue/10 text-official-blue px-4 py-1 rounded-full text-sm font-bold mb-6">
-              千葉県・東葛エリア専門 / 実家じまい・空き家相談
+              実家じまい・空き家相談
             </span>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
               実家の片付け・処分・売却。<br className="hidden md:block" />

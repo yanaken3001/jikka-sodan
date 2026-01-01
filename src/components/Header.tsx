@@ -11,9 +11,9 @@ export default function Header() {
         </Link>
         <div className="flex items-center gap-4">
           <div className="hidden md:block text-right">
-            <p className="text-xs text-gray-500 font-bold">東葛エリア専用ダイヤル</p>
+            <p className="text-xs text-gray-500 font-bold">専用ダイヤル</p>
             <p className="text-xl font-bold text-official-blue tracking-wider">0123-456-789</p>
-            <p className="text-xs text-gray-400">受付 9:00-18:00 (土日祝可)</p>
+            <p className="text-xs text-gray-400">受付 9:00-18:00 (土曜可)</p>
           </div>
           <a
             href="tel:0123-456-789"
