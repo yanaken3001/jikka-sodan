@@ -6,7 +6,6 @@ export default function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="app-container flex justify-between items-center h-16 md:h-20">
         <Link href="/" className="text-lg md:text-xl font-bold text-official-blue leading-tight hover:opacity-80 transition-opacity">
-          千葉・東葛<br className="md:hidden" />
           <span className="text-black">実家じまい総合相談窓口</span>
         </Link>
         <div className="flex items-center gap-4">
