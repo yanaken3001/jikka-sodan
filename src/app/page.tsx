@@ -1,65 +1,102 @@
-import Image from "next/image";
+import Link from "next/link";
+import { MapPin, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200 py-4">
+        <div className="app-container flex justify-between items-center">
+          <h1 className="text-xl font-bold text-official-blue">
+            実家じまい総合相談窓口
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:0123-456-789"
+            className="text-sm font-bold text-gray-600 hover:text-official-blue md:hidden"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            お電話で相談
           </a>
         </div>
+      </header>
+
+      <main className="flex-grow bg-gray-50">
+        {/* Hero Section */}
+        <section className="bg-white py-16 md:py-24">
+          <div className="app-container text-center max-w-3xl mx-auto">
+            <span className="inline-block bg-official-blue/10 text-official-blue px-4 py-1 rounded-full text-sm font-bold mb-6">
+              全国対応・公的支援機関連携
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
+              実家の処分・整理、<br />
+              どこに相談すればいいか<br className="md:hidden" />迷っていませんか？
+            </h2>
+            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+              「実家じまい総合相談窓口」は、空き家整理から不動産売却まで、
+              <br className="hidden md:inline" />
+              自治体や専門家と連携し、窓口ひとつで解決する公的な相談機関です。
+            </p>
+            
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 inline-block w-full max-w-md">
+              <p className="font-bold text-official-blue mb-4">
+                まずはお住まいの地域を選択してください
+              </p>
+              <Link
+                href="/chiba"
+                className="w-full bg-official-blue hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-md shadow-md flex items-center justify-center transition-colors"
+              >
+                <MapPin className="mr-2" size={20} />
+                千葉県（Chiba）
+                <ArrowRight className="ml-auto" size={20} />
+              </Link>
+              <p className="text-xs text-gray-500 mt-2 text-left">
+                ※現在は千葉県エリア、特に東葛地域（松戸・柏・流山）の対応を強化しています。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Features/Trust Section */}
+        <section className="py-16">
+          <div className="app-container">
+            <h3 className="text-center text-2xl font-bold mb-12">
+              当窓口が選ばれる3つの理由
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                  🏛️
+                </div>
+                <h4 className="font-bold text-lg mb-2">公的機関のような安心感</h4>
+                <p className="text-gray-600 text-sm">
+                  無理な営業は一切なし。市役所の窓口のように、中立的な立場でお話を伺います。
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                  📋
+                </div>
+                <h4 className="font-bold text-lg mb-2">ワンストップ解決</h4>
+                <p className="text-gray-600 text-sm">
+                  片付け業者、不動産屋、解体業者...あちこちに電話する必要はありません。
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                  💰
+                </div>
+                <h4 className="font-bold text-lg mb-2">費用の持ち出し0円</h4>
+                <p className="text-gray-600 text-sm">
+                  売却益からの精算プランをご用意。手元の現金を減らさずに実家じまいが可能です。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <footer className="bg-gray-800 text-gray-400 py-8 text-center text-sm">
+        <p>&copy; {new Date().getFullYear()} 実家じまい総合相談窓口</p>
+      </footer>
     </div>
   );
 }

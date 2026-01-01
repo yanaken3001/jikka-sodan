@@ -1,0 +1,283 @@
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { Phone, CheckCircle, Home, Truck, FileText, ArrowRight, MapPin } from 'lucide-react';
+
+export const metadata = {
+  title: '千葉・東葛 実家じまい総合相談窓口 | 松戸・柏・流山の空き家相談',
+  description: '千葉県東葛エリア（松戸・柏・流山）専門。実家の片付けから売却まで、窓口ひとつで解決。残置物そのままでOK、持ち出し資金0円で対応可能です。',
+};
+
+export default function TokatsuPage() {
+  return (
+    <div className="min-h-screen flex flex-col font-sans">
+      {/* 1. Header */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div className="app-container flex justify-between items-center h-16 md:h-20">
+          <Link href="/" className="text-lg md:text-xl font-bold text-official-blue leading-tight">
+            千葉・東葛<br className="md:hidden" />
+            <span className="text-black">実家じまい総合相談窓口</span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:block text-right">
+              <p className="text-xs text-gray-500 font-bold">東葛エリア専用ダイヤル</p>
+              <p className="text-xl font-bold text-official-blue tracking-wider">0123-456-789</p>
+              <p className="text-xs text-gray-400">受付 9:00-18:00 (土日祝可)</p>
+            </div>
+            <a 
+              href="tel:0123-456-789" 
+              className="bg-official-green hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md shadow flex items-center md:hidden"
+            >
+              <Phone size={18} className="mr-1" />
+              相談無料
+            </a>
+            <a 
+              href="#contact" 
+              className="hidden md:flex bg-official-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md shadow items-center transition-colors"
+            >
+              無料相談予約
+              <ArrowRight size={18} className="ml-2" />
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        {/* 2. Hero Section */}
+        <section className="relative bg-blue-50">
+          <div className="app-container py-12 md:py-20 grid md:grid-cols-2 gap-8 items-center">
+            <div className="order-2 md:order-1">
+              <div className="inline-block bg-white text-official-blue font-bold px-3 py-1 rounded-full border border-blue-200 mb-4 text-sm md:text-base">
+                千葉・東葛エリア（松戸・柏・流山）専門
+              </div>
+              <h1 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">
+                片付け・整理は一切不要。<br />
+                そのままの状態<span className="text-official-blue">「まるごと」</span>で<br />
+                お話しください。
+              </h1>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                「実家が散らかっていて恥ずかしい...」<br />
+                そんな心配はいりません。実家の片付けから売却まで、<br className="hidden md:inline" />
+                私たち公的認定窓口がすべて手配します。
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="#contact" 
+                  className="bg-official-green text-white font-bold py-4 px-8 rounded-lg shadow-lg text-center hover:bg-green-700 transition-colors flex items-center justify-center text-lg"
+                >
+                  まずは「手続き」の流れを確認する
+                  <span className="text-sm font-normal ml-2 bg-white/20 px-2 py-0.5 rounded">無料</span>
+                </a>
+              </div>
+            </div>
+            <div className="order-1 md:order-2 relative h-[300px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <Image 
+                src="/hero.png" 
+                alt="優しく手を差し伸べる相談員"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 md:p-8">
+                <p className="text-white font-bold text-lg md:text-xl">
+                  「散らかったままで大丈夫ですよ」
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. The "3 Reliefs" (Why Us) */}
+        <section className="py-16 bg-white">
+          <div className="app-container">
+             <div className="text-center mb-16">
+               <span className="text-official-blue font-bold tracking-widest uppercase text-sm">Features</span>
+               <h2 className="text-2xl md:text-3xl font-bold mt-2">当窓口の「3つの安心」</h2>
+               <div className="w-16 h-1 bg-official-blue mx-auto mt-4 rounded-full"></div>
+             </div>
+
+             <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+               {/* Relief 1 */}
+               <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+                 <div className="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
+                 <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-md mb-6 relative z-10 text-official-blue">
+                   <Home size={32} />
+                 </div>
+                 <h3 className="text-xl font-bold mb-4">① 残置物そのままOK</h3>
+                 <p className="text-gray-600 leading-relaxed">
+                   「ゴミ屋敷状態で恥ずかしい」なんて思わないでください。分別も運び出しも一切不要。
+                   すべてプロが適正に処理しますので、鍵をお預かりするだけで完了します。
+                 </p>
+               </div>
+
+                {/* Relief 2 */}
+                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+                 <div className="absolute top-0 right-0 bg-green-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
+                 <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-md mb-6 relative z-10 text-official-green">
+                   <div className="font-bold text-2xl">¥0</div>
+                 </div>
+                 <h3 className="text-xl font-bold mb-4">② 持ち出し現金0円</h3>
+                 <p className="text-gray-600 leading-relaxed">
+                   実家の解体費用や片付け費用は、売却した代金から後払いで精算可能な「立替プラン」をご用意。
+                   手元の年金や貯金を切り崩す必要はありません。
+                 </p>
+               </div>
+
+                {/* Relief 3 */}
+                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+                 <div className="absolute top-0 right-0 bg-orange-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
+                 <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-md mb-6 relative z-10 text-orange-500">
+                   <CheckCircle size={32} />
+                 </div>
+                 <h3 className="text-xl font-bold mb-4">③ たらい回しなし</h3>
+                 <p className="text-gray-600 leading-relaxed">
+                   行政への手続き、司法書士、不動産業者...。
+                   これらをすべて当窓口の「専任担当者」が一本化して調整します。何度も同じ説明をする必要はありません。
+                 </p>
+               </div>
+             </div>
+          </div>
+        </section>
+
+        {/* 4. Local Trust */}
+        <section className="py-16 bg-gray-600 text-white relative overflow-hidden">
+           <div className="absolute inset-0 opacity-10 bg-[url('/pattern.png')]"></div> {/* Pattern placeholder if needed */}
+           <div className="app-container relative z-10 grid md:grid-cols-2 gap-12 items-center">
+             <div>
+               <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                 東葛エリア専門だからこそ、<br />
+                 <span className="text-yellow-400">「地の利」</span>を熟知しています。
+               </h2>
+               <p className="leading-relaxed opacity-90 mb-6">
+                 私たちは松戸・柏・流山に拠点を置く地域密着の相談所です。
+                 たとえば、国道6号線や16号線の慢性的な渋滞事情も考慮した上で、
+                 もっとも効率的で近隣に迷惑をかけない作業スケジュールを組みます。
+               </p>
+               <ul className="space-y-4">
+                 <li className="flex items-center">
+                   <MapPin className="text-yellow-400 mr-3" />
+                   <span>狭い路地での2tトラック進入可否も即時判断</span>
+                 </li>
+                 <li className="flex items-center">
+                   <MapPin className="text-yellow-400 mr-3" />
+                   <span>地元の行政ルール（ゴミ分別）に完全準拠</span>
+                 </li>
+               </ul>
+             </div>
+             <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
+                <div className="bg-gray-500 h-64 rounded flex items-center justify-center text-gray-300">
+                  {/* Map placeholder or localized image */}
+                  <span className="text-sm">東葛エリアマップ（イメージ）</span>
+                </div>
+             </div>
+           </div>
+        </section>
+
+        {/* 5. Process */}
+        <section className="py-16 bg-white">
+          <div className="app-container max-w-4xl mx-auto">
+            <h2 className="text-center text-2xl md:text-3xl font-bold mb-12">解決までの流れ</h2>
+            
+            <div className="space-y-8">
+              {/* Step 1 */}
+              <div className="flex md:items-start flex-col md:flex-row gap-6">
+                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl">
+                   1
+                 </div>
+                 <div className="flex-grow pt-2">
+                   <h3 className="text-xl font-bold mb-2">無料相談</h3>
+                   <p className="text-gray-600">
+                     お電話またはフォームからご連絡ください。「まだ売ると決めていない」段階でも構いません。
+                     おおよその住所と現状（空き家期間など）をお聞きします。
+                   </p>
+                 </div>
+              </div>
+
+               {/* Step 2 */}
+               <div className="flex md:items-start flex-col md:flex-row gap-6">
+                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl">
+                   2
+                 </div>
+                 <div className="flex-grow pt-2">
+                   <h3 className="text-xl font-bold mb-2">現地調査（立会不要も可）</h3>
+                   <p className="text-gray-600">
+                     専門スタッフが現地を確認します。遠方にお住まいの場合は、鍵をお預かりしての調査も可能です。
+                     近隣の方に知られないよう配慮して行います。
+                   </p>
+                 </div>
+              </div>
+
+               {/* Step 3 */}
+               <div className="flex md:items-start flex-col md:flex-row gap-6">
+                 <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-official-blue text-white font-bold text-2xl">
+                   3
+                 </div>
+                 <div className="flex-grow pt-2">
+                   <h3 className="text-xl font-bold mb-2">プラン提示・実務開始</h3>
+                   <p className="text-gray-600">
+                     「片付け＋売却」「解体して更地渡し」など、手残り金額が最大になるプランをご提案します。
+                     ご納得いただければ、面倒な作業はすべて代行します。
+                   </p>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. CTA / Operator */}
+        <section id="contact" className="py-16 bg-blue-50">
+          <div className="app-container max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+              <div className="md:w-1/2 relative h-64 md:h-auto">
+                 <Image 
+                    src="/operator.png" 
+                    alt="笑顔で電話対応するスタッフ"
+                    fill
+                    className="object-cover"
+                 />
+              </div>
+              <div className="md:w-1/2 p-8 md:p-12">
+                <h2 className="text-2xl font-bold mb-4">お気軽にご相談ください</h2>
+                <p className="text-gray-600 mb-6 text-sm">
+                  「こんなこと聞いてもいいのかな？」という些細なことでも大歓迎です。
+                  強引な勧誘は一切ございません。
+                </p>
+                
+                <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6 text-center">
+                  <p className="text-sm font-bold text-gray-500 mb-1">お電話でのご相談（通話無料）</p>
+                  <a href="tel:0123-456-789" className="block text-3xl font-bold text-official-blue hover:opacity-80 transition-opacity">
+                    0123-456-789
+                  </a>
+                  <p className="text-xs text-gray-400 mt-2">受付時間 9:00〜18:00（まずは相談員に繋がります）</p>
+                </div>
+                
+                 <button className="w-full bg-official-green hover:bg-green-700 text-white font-bold py-4 rounded-lg shadow transition-colors flex items-center justify-center">
+                   <FileText className="mr-2" />
+                   WEB相談予約フォーム (24時間)
+                 </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-gray-800 text-gray-400 py-12 text-sm">
+        <div className="app-container grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h4 className="text-white font-bold mb-4">実家じまい総合相談窓口</h4>
+            <p>運営：株式会社[パートナー名]</p>
+            <p>千葉県東葛エリア事務局：千葉県柏市XX-XX</p>
+          </div>
+          <div className="text-xs">
+            <p className="mb-2">※当窓口は行政機関と連携し、空き家対策特別措置法に基づいた適切な管理・処分を推進する民間相談機関です。</p>
+            <p>※古物商許可番号: 第1234567890号</p>
+          </div>
+        </div>
+        <div className="text-center border-t border-gray-700 pt-8">
+           <p>&copy; {new Date().getFullYear()} 実家じまい総合相談窓口 All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
