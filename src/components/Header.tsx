@@ -1,15 +1,30 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 
-export default function Header() {
+interface HeaderProps {
+  areaName?: string;
+}
+
+export default function Header({ areaName }: HeaderProps) {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="app-container flex justify-between items-center h-16 md:h-20">
-        <Link href="/" className="inline-block select-none group">
-          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0b3668] tracking-widest leading-none group-hover:opacity-80 transition-opacity whitespace-nowrap">
-            実家じまい総合相談窓口
-          </h1>
-        </Link>
+        {areaName ? (
+          <Link href="/chiba/tokatsu" className="inline-flex flex-col md:flex-row md:items-baseline font-bold leading-tight select-none group">
+            <span className="text-blue-600 mr-0 md:mr-2 text-sm md:text-xl tracking-wider">
+              {areaName}
+            </span>
+            <span className="text-slate-800 text-lg md:text-xl tracking-widest group-hover:opacity-70 transition-opacity">
+              実家じまい総合相談窓口
+            </span>
+          </Link>
+        ) : (
+          <Link href="/" className="inline-block select-none group">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0b3668] tracking-widest leading-none group-hover:opacity-80 transition-opacity whitespace-nowrap">
+              実家じまい総合相談窓口
+            </h1>
+          </Link>
+        )}
         <div className="flex items-center gap-4">
           <div className="hidden md:block text-right">
             <p className="text-xs text-gray-500 font-bold">専用ダイヤル</p>

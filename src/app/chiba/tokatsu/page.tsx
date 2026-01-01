@@ -12,7 +12,7 @@ export const metadata = {
 export default function TokatsuPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      <Header />
+      <Header areaName="千葉・東葛" />
 
       <main className="flex-grow">
         {/* Breadcrumbs */}
