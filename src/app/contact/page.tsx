@@ -66,7 +66,6 @@ export default function ContactPage() {
   if (isSuccess) {
     return (
       <div className="min-h-screen flex flex-col bg-gray-50">
-        <div className="w-full h-16 bg-blue-900" aria-hidden="true"></div>
         <Header />
         <main className="flex-grow flex items-center justify-center p-4">
           <div className="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full text-center">
@@ -87,14 +86,12 @@ export default function ContactPage() {
           </div>
         </main>
         <Footer />
-        <div className="w-full h-16 bg-blue-900" aria-hidden="true"></div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <div className="w-full h-16 bg-blue-900" aria-hidden="true"></div>
       <Header />
 
       <main className="flex-grow py-12 md:py-20">
@@ -303,7 +300,6 @@ export default function ContactPage() {
       </main>
 
       <Footer />
-      <div className="w-full h-16 bg-blue-900" aria-hidden="true"></div>
     </div>
   );
 }
