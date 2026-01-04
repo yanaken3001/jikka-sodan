@@ -19,8 +19,8 @@ export default function TokatsuPage() {
 
         {/* 2. Hero Section */}
         <section className="relative bg-blue-50">
-          <div className="app-container py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
+          <div className="app-container py-24 md:py-32 flex flex-col items-center text-center">
+            <div className="max-w-4xl">
               <div className="inline-block bg-white text-official-navy font-bold px-3 py-1 rounded-full border border-blue-200 mb-6 text-sm md:text-base shadow-sm">
                 千葉・東葛エリア（松戸・柏・流山・野田・我孫子）専門
               </div>
@@ -35,7 +35,7 @@ export default function TokatsuPage() {
                 私たち認定専門家が連携してすべて手配します。
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="tel:0123-456-789"
                   className="bg-white border-2 border-official-navy text-official-navy font-bold py-4 px-6 rounded-none shadow-sm hover:bg-blue-50 transition-colors flex items-center justify-center"
@@ -50,16 +50,6 @@ export default function TokatsuPage() {
                   無料・現地調査を依頼する
                 </a>
               </div>
-            </div>
-            {/* Hero Image Update: Professional Consultation Vibe */}
-            <div className="order-1 md:order-2 relative h-[300px] md:h-[450px] w-full rounded-none overflow-hidden shadow-xl border-4 border-white">
-              <Image 
-                src="/local_staff.png" 
-                alt="不動産のプロフェッショナルによる相談"
-                fill
-                className="object-cover"
-                priority
-              />
             </div>
           </div>
         </section>
