@@ -22,7 +22,7 @@ export default function Button({
     "inline-flex items-center justify-center font-bold rounded-md transition-colors shadow-md";
   
   const variants = {
-    primary: "bg-official-green hover:bg-green-700 text-white",
+    primary: "bg-[#28a745] hover:bg-green-700 text-white",
     secondary: "bg-official-blue hover:bg-blue-700 text-white",
     outline: "bg-white border-2 border-official-blue text-official-blue hover:bg-blue-50",
   };
