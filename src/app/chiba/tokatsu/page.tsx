@@ -166,29 +166,18 @@ export default function TokatsuPage() {
                  </li>
                </ul>
              </div>
-             <div className="space-y-4">
-               {/* Local Staff Image */}
-               <div className="bg-white p-2 rounded-lg shadow-lg rotate-1 transform">
-                  <div className="relative h-64 w-full rounded overflow-hidden">
-                    <Image
-                      src="/local_staff.png"
-                      alt="地域密着の担当スタッフ"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-               </div>
-               {/* Map Image */}
-               <div className="bg-white p-2 rounded-lg shadow-lg -rotate-1 transform">
-                  <div className="relative h-48 w-full rounded overflow-hidden">
-                    <Image
-                      src="/tokatsu_map.png"
-                      alt="東葛エリアマップ"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-               </div>
+             <div className="flex justify-center items-center">
+                {/* Map Image */}
+                <div className="bg-white p-2 rounded-lg shadow-lg rotate-1 transform w-full">
+                   <div className="relative h-64 md:h-80 w-full rounded overflow-hidden">
+                     <Image
+                       src="/tokatsu_map.png"
+                       alt="東葛エリアマップ"
+                       fill
+                       className="object-contain"
+                     />
+                   </div>
+                </div>
              </div>
            </div>
         </section>
