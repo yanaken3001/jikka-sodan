@@ -20,7 +20,7 @@ export default function TokatsuPage() {
 
         {/* 2. Hero Section */}
         <section className="relative bg-blue-50">
-          <div className="app-container py-24 md:py-32 flex flex-col items-center text-center">
+          <div className="app-container py-32 md:py-48 flex flex-col items-center text-center">
             <div className="max-w-4xl">
               <div className="inline-block bg-white text-official-navy font-bold px-3 py-1 rounded-full border border-blue-200 mb-6 text-sm md:text-base shadow-sm">
                 千葉・東葛エリア（松戸・柏・流山・野田・我孫子）専門
@@ -126,10 +126,13 @@ export default function TokatsuPage() {
 
                 {/* Relief 3 */}
                 <div className="bg-gray-50 rounded-xl p-0 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
-                 <div className="relative h-48 w-full bg-gray-200 flex items-center justify-center">
-                    <div className="bg-white p-4 rounded-full shadow-lg">
-                       <CheckCircle size={48} className="text-official-navy" />
-                    </div>
+                 <div className="relative h-48 w-full bg-gray-200">
+                    <Image 
+                      src="/representative_man.png" 
+                      alt="専任担当者" 
+                      fill 
+                      className="object-cover object-top"
+                    />
                  </div>
                  <div className="p-8">
                    <h3 className="text-xl font-bold mb-4">専任担当制</h3>
