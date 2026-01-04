@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Loader2, Send, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Button from "@/components/ui/Button";
 
 // GAS API URL is loaded from process.env.NEXT_PUBLIC_GAS_API_URL
 
@@ -33,8 +34,10 @@ export default function ContactPage() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm<FormInputs>();
+    formState: { errors, isValid },
+  } = useForm<FormInputs>({
+    mode: "onChange", // Enable validation on change to update isValid in real-time
+  });
 
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
@@ -78,12 +81,9 @@ export default function ContactPage() {
               担当者より折り返しご連絡させていただきます。<br />
               今しばらくお待ちください。
             </p>
-            <a
-              href="/"
-              className="inline-block bg-official-navy text-white font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity"
-            >
+            <Button href="/" variant="secondary">
               トップページへ戻る
-            </a>
+            </Button>
           </div>
         </main>
         <Footer />
@@ -274,10 +274,12 @@ export default function ContactPage() {
 
               {/* Submit Button */}
               <div className="pt-4">
-                <button
+                <Button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-official-red hover:opacity-90 text-white font-bold py-5 rounded-lg shadow-lg text-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  disabled={!isValid || isSubmitting}
+                  variant="cta"
+                  size="lg"
+                  className="w-full text-xl py-5"
                 >
                   {isSubmitting ? (
                     <>
@@ -290,7 +292,7 @@ export default function ContactPage() {
                       この内容で相談する
                     </>
                   )}
-                </button>
+                </Button>
                 <p className="text-center text-xs text-gray-500 mt-4">
                   ※お預かりした個人情報は厳重に管理し、ご相談対応以外の目的には使用いたしません。
                 </p>

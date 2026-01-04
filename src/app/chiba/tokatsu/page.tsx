@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Phone, CheckCircle, Home, FileText, MapPin, ChevronRight, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/ui/Button';
 
 export const metadata = {
   title: '千葉・東葛 実家じまい総合相談窓口 | 松戸・柏・流山・野田・我孫子的空き家相談',
@@ -36,19 +37,24 @@ export default function TokatsuPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
+                <Button
                   href="tel:0123-456-789"
-                  className="bg-white border-2 border-official-navy text-official-navy font-bold py-4 px-6 rounded-none shadow-sm hover:bg-blue-50 transition-colors flex items-center justify-center"
+                  variant="outline"
+                  size="xl"
+                  rounded="none"
+                  icon={Phone}
+                  className="px-6"
                 >
-                    <Phone className="mr-2" size={24} />
-                    <span className="text-lg">0123-456-789</span>
-                </a>
-                <Link 
-                  href="/contact" 
-                  className="bg-official-red text-white font-bold py-4 px-8 rounded-none shadow-lg text-center hover:opacity-90 transition-opacity flex items-center justify-center text-lg"
+                    0123-456-789
+                </Button>
+                <Button
+                  href="/contact"
+                  variant="cta"
+                  size="xl"
+                  rounded="none"
                 >
                   無料・現地調査を依頼する
-                </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -276,11 +282,16 @@ export default function TokatsuPage() {
                   <p className="text-xs text-gray-400 mt-2">受付時間 9:00〜18:00（まずは相談員に繋がります）</p>
                 </div>
                 
-                 <Link href="/contact" className="w-full bg-official-red hover:opacity-90 text-white font-bold py-4 px-6 rounded-lg shadow-md transition-opacity flex items-center justify-center text-lg">
-                   <FileText className="mr-2" />
+                 <Button 
+                   href="/contact" 
+                   variant="cta" 
+                   size="lg"
+                   icon={FileText}
+                   className="w-full text-lg"
+                 >
                    WEB相談予約フォーム (24時間)
                    <ArrowRight className="ml-2" size={20} />
-                 </Link>
+                 </Button>
               </div>
             </div>
           </div>

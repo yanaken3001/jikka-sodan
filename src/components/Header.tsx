@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
+import Button from "./ui/Button";
 
 interface HeaderProps {
   areaName?: string;
@@ -31,20 +32,22 @@ export default function Header({ areaName }: HeaderProps) {
             <p className="text-xl font-bold text-official-blue tracking-wider">0123-456-789</p>
             <p className="text-xs text-gray-400">受付 9:00-18:00 (土曜可)</p>
           </div>
-          <a
+          <Button
             href="tel:0123-456-789"
-            className="bg-[#28a745] hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md shadow flex items-center md:hidden transition-colors"
+            variant="primary"
+            className="md:hidden"
+            icon={Phone}
           >
-            <Phone size={18} className="mr-1" />
-            相談無料
-          </a>
-          <Link
+             相談無料
+          </Button>
+          <Button
             href="/contact"
-            className="hidden md:flex bg-[#28a745] hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md shadow items-center transition-colors"
+            variant="primary"
+            className="hidden md:flex"
+            icon={ArrowRight}
           >
             無料相談予約
-            <ArrowRight size={18} className="ml-2" />
-          </Link>
+          </Button>
         </div>
       </div>
     </header>

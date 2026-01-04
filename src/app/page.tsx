@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MapPin, ArrowRight, FileText, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Button from "@/components/ui/Button";
 
 export default function Home() {
   return (
@@ -24,13 +25,15 @@ export default function Home() {
               地域専門家と連携した実家じまい専門窓口です。
             </p>
             <div className="flex justify-center">
-              <Link 
+              <Button 
                 href="/chiba" 
-                className="bg-official-red hover:opacity-90 text-white font-bold py-5 px-12 rounded-none shadow-lg flex items-center justify-center text-xl transition-all"
+                variant="cta"
+                size="xl"
+                rounded="none"
+                icon={ArrowRight}
               >
                 エリアを選択して相談
-                <ArrowRight className="ml-2" />
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
