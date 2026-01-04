@@ -2,14 +2,16 @@
 
 @theme inline {
   --color-official-navy: #003366; /* Kachi-iro */
-  --color-official-red: #CC0000; /* Signal Red */
+  --color-official-red: #cc0000; /* Signal Red */
   --color-official-black: #333333; /* Sumi Black */
-  --color-official-gray: #F3F4F6;
+  --color-official-gray: #f3f4f6;
+  --color-official-green: #28a745;
+  --color-official-blue: #0056b3;
   --font-sans: var(--font-noto-sans-jp);
 }
 
 :root {
-  --background: #FFFFFF;
+  --background: #ffffff;
   --foreground: #333333;
 }
 
@@ -18,11 +20,16 @@ body {
   color: var(--foreground);
   font-family: var(--font-noto-sans-jp), sans-serif;
   font-weight: 400; /* Regular */
-  line-height: 2.0; /* Loose for readability */
+  line-height: 2; /* Loose for readability */
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700; /* Bold */
   line-height: 1.5;
   letter-spacing: 0.05em;
