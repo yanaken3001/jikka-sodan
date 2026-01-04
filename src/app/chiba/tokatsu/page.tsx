@@ -60,11 +60,6 @@ export default function TokatsuPage() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8">
-                <p className="text-white font-bold text-lg md:text-xl">
-                  「散らかったままで大丈夫ですよ」
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -95,7 +90,7 @@ export default function TokatsuPage() {
                <div className="bg-gray-50 rounded-xl p-0 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
                  <div className="relative h-48 w-full bg-gray-200">
                     <Image 
-                      src="/clean_room.png" 
+                      src="/cluttered_room.png" 
                       alt="片付け・処分の様子" 
                       fill 
                       className="object-cover"
