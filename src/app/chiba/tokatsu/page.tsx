@@ -174,7 +174,7 @@ export default function TokatsuPage() {
              </div>
              <div className="flex justify-center items-center">
                 {/* Map Image */}
-                <div className="bg-white p-2 rounded-lg shadow-lg rotate-1 transform w-full">
+                <div className="bg-white p-2 rounded-lg shadow-lg w-full">
                    <div className="relative h-64 md:h-80 w-full rounded overflow-hidden">
                      <Image
                        src="/tokatsu_map.png"
