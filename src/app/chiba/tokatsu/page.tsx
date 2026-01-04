@@ -18,8 +18,8 @@ export default function TokatsuPage() {
         {/* Breadcrumbs REMOVED for optimization */}
 
         {/* 2. Hero Section */}
-        <section className="relative bg-blue-50 min-h-[80vh] flex items-center">
-          <div className="app-container py-20 w-full flex flex-col items-center text-center">
+        <section className="relative bg-blue-50">
+          <div className="app-container py-24 md:py-32 flex flex-col items-center text-center">
             <div className="max-w-4xl">
               <div className="inline-block bg-white text-official-navy font-bold px-3 py-1 rounded-full border border-blue-200 mb-6 text-sm md:text-base shadow-sm">
                 千葉・東葛エリア（松戸・柏・流山・野田・我孫子）専門
