@@ -38,13 +38,13 @@ export default function Header({ areaName }: HeaderProps) {
             <Phone size={18} className="mr-1" />
             相談無料
           </a>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="hidden md:flex bg-[#28a745] hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md shadow items-center transition-colors"
           >
             無料相談予約
             <ArrowRight size={18} className="ml-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </header>

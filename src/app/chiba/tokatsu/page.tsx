@@ -43,12 +43,12 @@ export default function TokatsuPage() {
                     <Phone className="mr-2" size={24} />
                     <span className="text-lg">0123-456-789</span>
                 </a>
-                <a 
-                  href="#contact" 
+                <Link 
+                  href="/contact" 
                   className="bg-official-red text-white font-bold py-4 px-8 rounded-none shadow-lg text-center hover:opacity-90 transition-opacity flex items-center justify-center text-lg"
                 >
                   無料・現地調査を依頼する
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -276,11 +276,11 @@ export default function TokatsuPage() {
                   <p className="text-xs text-gray-400 mt-2">受付時間 9:00〜18:00（まずは相談員に繋がります）</p>
                 </div>
                 
-                 <button className="w-full bg-official-red hover:opacity-90 text-white font-bold py-4 px-6 rounded-lg shadow-md transition-opacity flex items-center justify-center text-lg">
+                 <Link href="/contact" className="w-full bg-official-red hover:opacity-90 text-white font-bold py-4 px-6 rounded-lg shadow-md transition-opacity flex items-center justify-center text-lg">
                    <FileText className="mr-2" />
                    WEB相談予約フォーム (24時間)
                    <ArrowRight className="ml-2" size={20} />
-                 </button>
+                 </Link>
               </div>
             </div>
           </div>
