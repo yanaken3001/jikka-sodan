@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader2, Send, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
@@ -26,10 +26,32 @@ type FormInputs = {
   remarks: string;
 };
 
+// GAS の応答が失敗かどうかを判定する（HTML のエラーページ、または JSON のエラー表明を失敗とみなす）
+function isGasSuccess(body: string): boolean {
+  const text = body.trim();
+  if (text.startsWith("<")) return false;
+  try {
+    const json = JSON.parse(text);
+    if (json && typeof json === "object") {
+      if (json.status === "error" || json.result === "error") return false;
+      if (json.success === false || json.error) return false;
+    }
+  } catch {
+    // JSON でない文字列応答は失敗の表明が無い限り成功として扱う
+  }
+  return true;
+}
+
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+
+  // 送信ボタンはフォーム下部にあるため、失敗時はエラー表示が見える位置までスクロールする
+  useEffect(() => {
+    if (error) errorRef.current?.scrollIntoView?.({ behavior: "smooth", block: "center" });
+  }, [error]);
 
   const {
     register,
@@ -45,18 +67,23 @@ export default function ContactPage() {
 
     try {
       // Logic for GAS submission
-      const response = await fetch(process.env.NEXT_PUBLIC_GAS_API_URL || "", {
+      const endpoint = process.env.NEXT_PUBLIC_GAS_API_URL;
+      if (!endpoint) throw new Error("GAS endpoint is not configured");
+
+      // 応答を読んで成否を判定するため no-cors は使わない。text/plain は CORS のプリフライトが不要で、
+      // 従来（no-cors ではブラウザが text/plain に置き換えていた）と同じ形式で GAS に届く。
+      const response = await fetch(endpoint, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(data),
       });
+      if (!response.ok) throw new Error(`GAS responded with HTTP ${response.status}`);
+      if (!isGasSuccess(await response.text())) throw new Error("GAS reported an error");
 
-      // Mock success delay (GAS no-cors mode doesn't return status, so we assume success if no error thrown)
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setIsSuccess(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (err) {
+    } catch {
       setError("送信中にエラーが発生しました。時間をおいて再度お試しください。");
     } finally {
       setIsSubmitting(false);
@@ -108,7 +135,7 @@ export default function ContactPage() {
 
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
             {error && (
-              <div className="bg-red-50 text-red-600 p-4 rounded-lg mb-8 text-sm text-center">
+              <div ref={errorRef} role="alert" className="bg-red-50 text-red-600 p-4 rounded-lg mb-8 text-sm text-center">
                 {error}
               </div>
             )}
